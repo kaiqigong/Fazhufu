@@ -1,0 +1,11 @@
+if((select count(*) from UserProfile where WeiboId=1)=0)
+begin
+insert into UserProfile (WeiboId,WeiboName,PhotoUrl) values (1,'cage','');
+end
+else
+begin
+update UserProfile
+set WeiboName='cage',
+	PhotoUrl=''
+	where WeiboId=1
+end
